@@ -1,0 +1,13 @@
+applications:
+  - name: my-project
+    instances: 2
+    memory: 256M
+    path: ./dist
+    disk_quota: 256M
+    routes:
+      - route: my-project-sandbox.apps.pcfepg2wi.gm.com
+    buildpack: nginx_server_buildpack
+    env:
+      BUILDENV: dev
+      BASEPATH: /
+    stack: cflinuxfs3
